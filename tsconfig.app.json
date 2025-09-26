@@ -26,10 +26,19 @@
     /* Paths */
     "baseUrl": "src",
     "paths": {
-      "@app/*": ["app/*"],
       "@components/*": ["components/*"],
-      "@features/*": ["features/*"]
-    },
+      "@features/*": ["features/*"],
+      "@hooks/*": ["hooks/*"],
+      "@lib/*": ["lib/*"],
+      "@pages/*": ["pages/*"],
+      "@providers/*": ["providers/*"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
+      "@store/*": ["store/*"],
+      "@styles/*": ["styles/*"],
+      "@types/*": ["types/*"],
+      "@utils/*": ["utils/*"]
+    }
   },
   "include": ["src"]
 }

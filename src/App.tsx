@@ -1,12 +1,8 @@
-import { queryClient } from '@app/lib/query';
+import { queryClient } from '@lib/query';
+import { router } from '@routes/routes';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { createRouter, RouterProvider } from '@tanstack/react-router';
-import { routeTree } from '@app/lib/routeTree.gen';
-
-const router = createRouter({
-  routeTree,
-});
+import { RouterProvider } from 'react-router';
 
 export default function App() {
   return (

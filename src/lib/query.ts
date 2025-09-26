@@ -19,18 +19,3 @@ export const queryClient = new QueryClient({
     },
   },
 });
-
-queryClient.setQueryDefaults(['trpc'], {
-  networkMode: 'offlineFirst',
-});
-
-queryClient.setMutationDefaults(['trpc'], {
-  onError: (error) => {
-    if (error) {
-      const trpcError = error;
-      if (trpcError.data?.code === 'UNAUTHORIZED' || trpcError.message?.includes('401')) {
-        window.location.href = '/login';
-      }
-    }
-  },
-});
