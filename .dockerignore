@@ -1,9 +1,7 @@
-.git
-.vscode
+node_modules
+npm-debug.log
+Dockerfile
 .dockerignore
+.git
 .gitignore
 .env
-node_modules
-Dockerfile
-docker-compose.yaml
-README.md

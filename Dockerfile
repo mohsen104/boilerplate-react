@@ -1,11 +1,20 @@
-FROM bun:latest
+# Use the latest LTS version of Node.js
+FROM node:24-alpine
 
+# Set the working directory inside the container
 WORKDIR /app
 
-COPY package.json ./
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-RUN bun install
+# Install dependencies
+RUN npm install
 
+# Copy the rest of your application files
 COPY . .
 
-CMD ["bun", "start"]
+# Expose the port your app runs on
+EXPOSE 3000
+
+# Define the command to run your app
+CMD ["npm", "start"]
