@@ -1,8 +1,8 @@
-import { AuthLayout } from '@components/layouts/auth-layout';
-import { RootLayout } from '@components/layouts/root-layout';
-import { HomePage } from '@pages/home-page';
-import { LoginPage } from '@pages/login-page';
-import { ProductListPage } from '@pages/product-list-page';
+import AuthLayout from '@/components/layouts/AuthLayout';
+import RootLayout from '@/components/layouts/RootLayout';
+import HomePage from '@/pages/HomePage';
+import LoginPage from '@/pages/LoginPage';
+import ProductListPage from '@/pages/ProductListPage';
 import { createBrowserRouter } from 'react-router';
 
 export const router = createBrowserRouter([

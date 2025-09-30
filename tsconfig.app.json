@@ -26,18 +26,20 @@
     /* Paths */
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["components/*"],
-      "@features/*": ["features/*"],
-      "@hooks/*": ["hooks/*"],
-      "@lib/*": ["lib/*"],
-      "@pages/*": ["pages/*"],
-      "@providers/*": ["providers/*"],
-      "@routes/*": ["routes/*"],
-      "@services/*": ["services/*"],
-      "@store/*": ["store/*"],
-      "@styles/*": ["styles/*"],
-      "@types/*": ["types/*"],
-      "@utils/*": ["utils/*"]
+      "@/components/*": ["components/*"],
+      "@/features/*": ["features/*"],
+      "@/config/*": ["config/*"],
+      "@/context/*": ["context/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/lib/*": ["lib/*"],
+      "@/pages/*": ["pages/*"],
+      "@/providers/*": ["providers/*"],
+      "@/routes/*": ["routes/*"],
+      "@/services/*": ["services/*"],
+      "@/store/*": ["store/*"],
+      "@/styles/*": ["styles/*"],
+      "@/types/*": ["types/*"],
+      "@/utils/*": ["utils/*"]
     }
   },
   "include": ["src"]

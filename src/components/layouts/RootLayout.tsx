@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router';
 
-export function RootLayout() {
+export default function RootLayout() {
   return (
     <div>
       RootLayout
