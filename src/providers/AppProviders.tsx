@@ -1,12 +1,12 @@
 import AuthProvider from './AuthProvider';
 import QueryProvider from './QueryProvider';
-import RouterProvider from './RouterProvider';
+import AppRouterProvider from './AppRouterProvider';
 
 export default function AppProviders() {
   return (
     <QueryProvider>
       <AuthProvider>
-        <RouterProvider />
+        <AppRouterProvider />
       </AuthProvider>
     </QueryProvider>
   );
