@@ -27,9 +27,9 @@
     "baseUrl": "src",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/features/*": ["features/*"],
       "@/config/*": ["config/*"],
       "@/context/*": ["context/*"],
+      "@/features/*": ["features/*"],
       "@/hooks/*": ["hooks/*"],
       "@/lib/*": ["lib/*"],
       "@/pages/*": ["pages/*"],

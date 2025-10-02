@@ -16,7 +16,6 @@
     "@tailwindcss/vite": "^4.1.13",
     "@tanstack/react-query": "^5.90.2",
     "axios": "^1.12.2",
-    "boilerplate-react": ".",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.2",
