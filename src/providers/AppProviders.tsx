@@ -1,6 +1,6 @@
-import AuthProvider from './AuthProvider';
-import QueryProvider from './QueryProvider';
-import AppRouterProvider from './AppRouterProvider';
+import AuthProvider from './AuthProvider'
+import QueryProvider from './QueryProvider'
+import AppRouterProvider from './AppRouterProvider'
 
 export default function AppProviders() {
   return (
@@ -9,5 +9,5 @@ export default function AppProviders() {
         <AppRouterProvider />
       </AuthProvider>
     </QueryProvider>
-  );
+  )
 }

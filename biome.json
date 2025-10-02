@@ -1,29 +1,246 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "vcs": {
-    "enabled": false,
+    "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": false
+    "useIgnoreFile": true
   },
   "files": {
     "ignoreUnknown": false
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "tab"
+    "formatWithErrors": false,
+    "indentStyle": "space"
   },
   "linter": {
     "enabled": true,
-    "rules": {
-      "recommended": true
-    },
     "domains": {
-      "react": "recommended"
+      "react": "none"
+    },
+    "rules": {
+      "a11y": {
+        "noAccessKey": "error",
+        "noAriaHiddenOnFocusable": "error",
+        "noAriaUnsupportedElements": "error",
+        "noAutofocus": "error",
+        "noDistractingElements": "error",
+        "noHeaderScope": "error",
+        "noInteractiveElementToNoninteractiveRole": "error",
+        "noLabelWithoutControl": "error",
+        "noNoninteractiveElementToInteractiveRole": "error",
+        "noNoninteractiveTabindex": "error",
+        "noPositiveTabindex": "error",
+        "noRedundantAlt": "error",
+        "noRedundantRoles": "error",
+        "noStaticElementInteractions": "error",
+        "noSvgWithoutTitle": "error",
+        "useAltText": "error",
+        "useAnchorContent": "error",
+        "useAriaActivedescendantWithTabindex": "error",
+        "useAriaPropsForRole": "error",
+        "useAriaPropsSupportedByRole": "error",
+        "useButtonType": "error",
+        "useFocusableInteractive": "error",
+        "useHeadingContent": "error",
+        "useHtmlLang": "error",
+        "useIframeTitle": "error",
+        "useKeyWithClickEvents": "error",
+        "useKeyWithMouseEvents": "error",
+        "useMediaCaption": "error",
+        "useSemanticElements": "error",
+        "useValidAnchor": "error",
+        "useValidAriaProps": "error",
+        "useValidAriaRole": "error",
+        "useValidAriaValues": "error",
+        "useValidAutocomplete": "error",
+        "useValidLang": "error"
+      },
+      "complexity": {
+        "noAdjacentSpacesInRegex": "warn",
+        "noArguments": "warn",
+        "noBannedTypes": "warn",
+        "noCommaOperator": "warn",
+        "noEmptyTypeParameters": "warn",
+        "noExtraBooleanCast": "info",
+        "noFlatMapIdentity": "info",
+        "noStaticOnlyClass": "warn",
+        "noThisInStatic": "warn",
+        "noUselessCatch": "info",
+        "noUselessConstructor": "info",
+        "noUselessContinue": "info",
+        "noUselessEmptyExport": "info",
+        "noUselessEscapeInRegex": "info",
+        "noUselessFragments": "info",
+        "noUselessLabel": "info",
+        "noUselessLoneBlockStatements": "info",
+        "noUselessRename": "info",
+        "noUselessStringRaw": "info",
+        "noUselessSwitchCase": "info",
+        "noUselessTernary": "info",
+        "noUselessThisAlias": "info",
+        "noUselessTypeConstraint": "info",
+        "noUselessUndefinedInitialization": "info",
+        "useArrowFunction": "warn",
+        "useDateNow": "warn",
+        "useFlatMap": "info",
+        "useIndexOf": "info",
+        "useLiteralKeys": "info",
+        "useNumericLiterals": "warn",
+        "useOptionalChain": "warn",
+        "useRegexLiterals": "warn",
+        "useSimpleNumberKeys": "warn"
+      },
+      "correctness": {
+        "noChildrenProp": "error",
+        "noConstAssign": "error",
+        "noConstantCondition": "error",
+        "noConstantMathMinMaxClamp": "error",
+        "noConstructorReturn": "error",
+        "noEmptyCharacterClassInRegex": "error",
+        "noEmptyPattern": "error",
+        "noGlobalObjectCalls": "error",
+        "noInnerDeclarations": "error",
+        "noInvalidBuiltinInstantiation": "error",
+        "noInvalidConstructorSuper": "error",
+        "noInvalidUseBeforeDeclaration": "error",
+        "noNonoctalDecimalEscape": "error",
+        "noPrecisionLoss": "error",
+        "noSelfAssign": "error",
+        "noSetterReturn": "error",
+        "noStringCaseMismatch": "error",
+        "noSwitchDeclarations": "error",
+        "noUnreachable": "error",
+        "noUnreachableSuper": "error",
+        "noUnsafeFinally": "error",
+        "noUnsafeOptionalChaining": "error",
+        "noUnusedFunctionParameters": "warn",
+        "noUnusedImports": "warn",
+        "noUnusedLabels": "warn",
+        "noUnusedPrivateClassMembers": "warn",
+        "noUnusedVariables": "warn",
+        "noVoidElementsWithChildren": "error",
+        "noVoidTypeReturn": "error",
+        "useIsNan": "error",
+        "useParseIntRadix": "info",
+        "useValidForDirection": "error",
+        "useValidTypeof": "error",
+        "useYield": "error"
+      },
+      "performance": {
+        "noAccumulatingSpread": "warn",
+        "noDynamicNamespaceImportAccess": "warn"
+      },
+      "security": {
+        "noBlankTarget": "error",
+        "noDangerouslySetInnerHtml": "error",
+        "noDangerouslySetInnerHtmlWithChildren": "error",
+        "noGlobalEval": "error"
+      },
+      "style": {
+        "useArrayLiterals": "info",
+        "useConst": "warn",
+        "useExponentiationOperator": "info",
+        "useExportType": "warn",
+        "useImportType": "warn",
+        "useLiteralEnumMembers": "warn",
+        "useNodejsImportProtocol": "info",
+        "useShorthandFunctionType": "info",
+        "useTemplate": "info",
+        "noNonNullAssertion": "warn"
+      },
+      "suspicious": {
+        "noApproximativeNumericConstant": "warn",
+        "noArrayIndexKey": "error",
+        "noAssignInExpressions": "error",
+        "noAsyncPromiseExecutor": "error",
+        "noCatchAssign": "warn",
+        "noClassAssign": "error",
+        "noCommentText": "error",
+        "noCompareNegZero": "error",
+        "noConfusingLabels": "warn",
+        "noConfusingVoidType": "warn",
+        "noConstEnum": "warn",
+        "noControlCharactersInRegex": "error",
+        "noDebugger": "error",
+        "noDocumentCookie": "warn",
+        "noDoubleEquals": "error",
+        "noDuplicateCase": "error",
+        "noDuplicateClassMembers": "error",
+        "noDuplicateElseIf": "error",
+        "noDuplicateJsxProps": "error",
+        "noDuplicateObjectKeys": "error",
+        "noDuplicateParameters": "error",
+        "noEmptyInterface": "error",
+        "noExplicitAny": "warn",
+        "noExtraNonNullAssertion": "warn",
+        "noFallthroughSwitchClause": "error",
+        "noFunctionAssign": "error",
+        "noGlobalAssign": "error",
+        "noGlobalIsFinite": "warn",
+        "noGlobalIsNan": "warn",
+        "noImplicitAnyLet": "error",
+        "noImportAssign": "error",
+        "noIrregularWhitespace": "warn",
+        "noLabelVar": "error",
+        "noMisleadingCharacterClass": "error",
+        "noMisleadingInstantiator": "error",
+        "noMisrefactoredShorthandAssign": "error",
+        "noOctalEscape": "warn",
+        "noPrototypeBuiltins": "warn",
+        "noRedeclare": "error",
+        "noRedundantUseStrict": "warn",
+        "noSelfCompare": "error",
+        "noShadowRestrictedNames": "error",
+        "noSparseArray": "error",
+        "noSuspiciousSemicolonInJsx": "warn",
+        "noTemplateCurlyInString": "warn",
+        "noThenProperty": "error",
+        "noTsIgnore": "warn",
+        "noUnsafeDeclarationMerging": "error",
+        "noUnsafeNegation": "error",
+        "noUselessEscapeInString": "warn",
+        "noUselessRegexBackrefs": "warn",
+        "noWith": "error",
+        "useAdjacentOverloadSignatures": "warn",
+        "useDefaultSwitchClauseLast": "warn",
+        "useGetterReturn": "error",
+        "useGoogleFontDisplay": "warn",
+        "useIsArray": "warn",
+        "useIterableCallbackReturn": "error",
+        "useNamespaceKeyword": "error"
+      }
     }
   },
+  "overrides": [
+    {
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off",
+            "noDebugger": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedFunctionParameters": "off"
+          },
+          "complexity": {
+            "noExcessiveCognitiveComplexity": "warn"
+          }
+        }
+      }
+    }
+  ],
   "javascript": {
     "formatter": {
-      "quoteStyle": "double"
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "quoteProperties": "asNeeded",
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingCommas": "es5",
+      "jsxQuoteStyle": "single"
     }
   },
   "assist": {
