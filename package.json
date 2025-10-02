@@ -36,8 +36,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,css,md}": [
-      "biome format --write",
-      "biome lint --apply"
+      "biome format --write .",
+      "biome lint --write ."
     ]
   }
 }
