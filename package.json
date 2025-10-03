@@ -10,7 +10,8 @@
     "lint": "biome lint --write .",
     "format": "biome format --write .",
     "check": "biome check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "msw:init": "msw init public/ --save"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
@@ -39,6 +40,11 @@
     "*.{ts,tsx,js,jsx,json,css,md}": [
       "biome format --write .",
       "biome lint --write ."
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
     ]
   }
 }
