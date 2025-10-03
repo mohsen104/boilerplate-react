@@ -1,0 +1,12 @@
+# Universal robots.txt for all projects
+User-agent: *
+Allow: /
+
+# Common sensitive files and parameters
+Disallow: /?  # Hide homepage with parameters
+Disallow: /*?  # Hide all URLs with parameters
+Disallow: /*?sort=  # Hide sorted listings
+Disallow: /*?filter=  # Hide filtered results
+
+# Reasonable crawl delay for server protection
+Crawl-delay: 2
