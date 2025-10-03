@@ -2,6 +2,10 @@ import { http, HttpResponse } from 'msw'
 import { mockUsers } from '../data/mockUsers'
 
 export const usersHandlers = [
+  http.get('/api/users/getMe', () => {
+    return HttpResponse.json(mockUsers[0])
+  }),
+
   http.get('/api/users', () => {
     return HttpResponse.json(mockUsers)
   }),
