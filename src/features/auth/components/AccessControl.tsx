@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react'
-import { useAuth } from '@/hooks/useAuth'
+import { useAuth } from '@/features/auth/hooks/useAuth'
 import type { Role, Permission } from '@/types/auth'
 
 interface Props {
