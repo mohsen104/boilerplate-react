@@ -2,7 +2,7 @@ import { useAuth } from '@/hooks/useAuth'
 import type { ReactNode } from 'react'
 import { Navigate } from 'react-router-dom'
 
-type Props = {
+interface Props {
   children: ReactNode
 }
 

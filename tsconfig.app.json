@@ -32,6 +32,7 @@
       "@/features/*": ["features/*"],
       "@/hooks/*": ["hooks/*"],
       "@/lib/*": ["lib/*"],
+      "@/mocks/*": ["mocks/*"],
       "@/pages/*": ["pages/*"],
       "@/providers/*": ["providers/*"],
       "@/routes/*": ["routes/*"],
