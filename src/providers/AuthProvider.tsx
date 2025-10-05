@@ -1,5 +1,8 @@
 import { AuthContext } from "@/context/AuthContext";
-import { usersGetMe } from "@/services/users";
+import {
+  authGetMe,
+  authRefreshToken,
+} from "@/features/auth/services/auth.service";
 import type { User } from "@/types/auth";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
@@ -12,58 +15,41 @@ export default function AuthProvider({ children }: Props) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // const fetchUser = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const userData = await usersGetMe();
-  //     setUser(userData);
-  //   } catch (error) {
-  //     console.error("Failed to fetch user:", error);
-  //     setUser(null);
-  //     document.cookie =
-  //       "accessToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const GetMe = async () => {
+    const res = await authGetMe();
+    return {
+      id: res.id,
+      name: res.fullName,
+      role: res.role,
+      permissions: res.permissions,
+    };
+  };
 
-  const GetMe = () => {};
-  const GetAccessWithRefresh = () => {};
+  const GetAccessWithRefresh = async () => {
+    const res = await authRefreshToken();
+    return res;
+  };
 
-  const initializeAuth = () => {
-    const accessToken = document.cookie.includes("accessToken");
-    const refreshToken = document.cookie.includes("refreshToken");
+  const initializeAuth = async () => {
+    setLoading(true);
 
-    if (accessToken && refreshToken) {
-      try {
-        GetMe();
-      } catch (error) {
-        try {
-          GetAccessWithRefresh()
-        } catch (error) {
-          Logout()
-        }
+    const hasAccessToken = document.cookie.includes("accessToken");
+    const hasRefreshToken = document.cookie.includes("refreshToken");
+
+    try {
+      if (hasAccessToken) {
+        const me = await GetMe();
+        setUser(me);
+      } else if (hasRefreshToken) {
+        const me = await GetAccessWithRefresh();
+        setUser(me);
+      } else {
+        setUser(null);
       }
-    }
-
-    if (accessToken && !refreshToken) {
-      try {
-        GetMe();
-      } catch (error) {
-        Logout()
-      }
-    }
-
-    if (!accessToken && refreshToken) {
-      try {
-        GetAccessWithRefresh()
-      } catch (error) {
-        Logout()
-      }
-    }
-
-    if (!accessToken && !refreshToken) {
-      Logout()
+    } catch {
+      setUser(null);
+    } finally {
+      setLoading(false);
     }
   };
 
