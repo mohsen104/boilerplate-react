@@ -6,19 +6,21 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false
+    "ignoreUnknown": true,
+    "includes": ["**", "!node_modules", "!dist"]
   },
   "formatter": {
     "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "formatWithErrors": false
   },
   "linter": {
     "enabled": true,
     "domains": {
-      "react": "none"
+      "react": "recommended"
     },
     "rules": {
+      "recommended": true,
       "a11y": {
         "noAccessKey": "error",
         "noAriaHiddenOnFocusable": "error",
