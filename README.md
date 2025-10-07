@@ -1,6 +1,8 @@
-# React TypeScript Boilerplate 🚀
+# React Boilerplate 🚀
 
-A modern, scalable, and production-ready React TypeScript boilerplate with built-in authentication, state management, and developer tools.
+![poster](./public/poster.png)
+
+A modern, scalable, and production-ready React boilerplate with built-in authentication, state management, and developer tools.
 
 ## 📁 Project Structure
 
@@ -10,7 +12,7 @@ src/
 │   ├── icons/          # Icon components
 │   ├── layouts/        # Layout components (AuthLayout, RootLayout)
 │   ├── shared/         # Shared components across features
-│   └── ui/             # Base UI components
+│   └── ui/             # Base UI components (Button, Input, Modal, etc.)
 ├── features/           # Feature-based modules
 │   ├── auth/           # Authentication feature
 │   │   ├── components/ # Auth-specific components
@@ -25,99 +27,119 @@ src/
 │   ├── LoginPage.tsx
 │   └── ProductListPage.tsx
 ├── hooks/              # Global custom hooks
-│   ├── useAuth.ts
-│   └── useCopyToClipboard.ts
 ├── context/            # React Context providers
-│   └── AuthContext.tsx
-├── providers/          # App providers
-│   ├── AppProviders.tsx
-│   ├── AppRouterProvider.tsx
-│   ├── AuthProvider.tsx
-│   └── QueryProvider.tsx
+├── providers/          # App providers (AppProviders, QueryProvider, etc.)
 ├── routes/             # Routing configuration
-│   └── routes.tsx
 ├── services/           # API services
-├── store/              # State management
-├── types/              # TypeScript type definitions
-│   └── api/            # API-related types
+├── store/              # Redux store configuration
+├── types/              # Global TypeScript type definitions
 ├── utils/              # Utility functions
-│   └── debounce.ts
 ├── lib/                # Third-party library configurations
-│   └── query.ts
-├── styles/             # Global styles
-│   └── fonts.css
-└── config/             # App configuration
-    └── axios-config.ts
+├── styles/             # Global styles and themes
+├── config/             # App configuration files
+├── mocks/              # Mock data and API handlers
+└── assets/             # Static assets (images, fonts, etc.)
 ```
 
 ## 🛠 Tech Stack
 
-- **Frontend Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
+### Core Technologies
+
+- **Frontend Framework**: React 19 with TypeScript
+- **Build Tool**: Vite with SWC
+- **Styling**: Tailwind CSS 4
 - **Routing**: React Router
-- **State Management**: Redux Toolkit (feature-based slices)
-- **API Client**: Axios
-- **Data Fetching**: React Query (TanStack Query)
-- **Authentication**: Context API + Protected Routes
-- **Code Quality**: 
-  - ESLint
-  - Biome (formatting & linting)
-- **Git Hooks**: Husky
 - **Package Manager**: Bun
+
+### State Management & Data Fetching
+
+- **Client State**: Redux Toolkit (feature-based slices)
+- **Server State**: React Query (TanStack Query)
+- **Context API**: For auth and theme management
+
+### Development & Quality
+
+- **Language**: TypeScript (strict mode)
+- **Linting**: ESLint + Biome (formatting & linting)
+- **Git Hooks**: Husky + lint-staged
+- **Mocking**: MSW (Mock Service Worker)
+
+### Deployment & Containerization
+
 - **Containerization**: Docker & Docker Compose
+- **Environment Management**: Dotenv
 
 ## ✨ Features
 
 ### 🔐 Authentication System
-- Protected route implementation
-- Access control components
-- Auth context provider
+
+- JWT-based authentication
+- Protected routes with `ProtectedRoute` component
+- Role-based access control with `AccessControl`
+- Auth context with `useAuth` hook
+- Automatic token refresh
 - Login/Logout functionality
 
 ### 🏗 Project Architecture
+
 - Feature-based folder structure
 - Modular and scalable design
 - Separation of concerns
 - Reusable component library
+- Custom hooks for business logic
 
 ### 🎨 Developer Experience
-- Hot module replacement (HMR)
+
+- Hot module replacement (HMR) with Vite
 - TypeScript for type safety
+- Path aliases configured
 - Pre-commit hooks with Husky
 - Consistent code formatting with Biome
-- Path aliases configured
+- Mock API with MSW
 
 ### 📦 Production Ready
+
 - Docker containerization
 - Environment variables management
 - Optimized build output
 - SEO-friendly (robots.txt)
+- Asset optimization
+
+### 🔧 Development Tools
+
+- Biome for blazing-fast formatting and linting
+- SWC for fast compilation
+- Bun for fast package management
+- TypeScript strict configuration
+- Pre-configured path aliases
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (version specified in .nvmrc)
+
+- Node.js 18+ (version specified in .nvmrc)
 - Bun package manager
 - Docker (optional)
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mohsen104/boilerplate-react
    cd react-ts-boilerplate
    ```
 
 2. **Install dependencies**
+
    ```bash
    bun install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env
-   # Edit .env with your configuration
    ```
 
 4. **Start development server**
@@ -133,87 +155,70 @@ docker-compose up -d
 
 # Stop containers
 docker-compose down
+
+# View logs
+docker-compose logs -f
 ```
 
 ## 📜 Available Scripts
 
-- `bun run dev` - Start development server
-- `bun run build` - Build for production
-- `bun run preview` - Preview production build
-- `bun run lint` - Run ESLint
+- `bun run dev` - Start development server with HMR
+- `bun run preview` - Preview production build locally
+- `bun run build` - Build for production (includes TypeScript compilation)
+- `bun run lint` - Run Biome linting and auto-fix issues
 - `bun run format` - Format code with Biome
-- `bun run type-check` - Run TypeScript compiler
+- `bun run check` - Comprehensive Biome check (lint + format)
+- `bun run msw:init` - Initialize MSW service worker
 
-## 🏷 TypeScript
+## 🏷 TypeScript Configuration
 
-This boilerplate includes full TypeScript support with:
-- Strict type checking
-- Path aliases configuration
+- Strict type checking enabled
+- Path aliases for clean imports
 - Environment variables typing
-- API response types
+- API response types with generics
+- Custom hooks with proper return types
 
 ## 🎯 Core Concepts
 
 ### Feature-Based Architecture
-Each feature contains its own:
-- Components
-- Custom hooks
-- API services
-- State management (slices)
-- Type definitions
 
-### State Management
-- Redux Toolkit for global state
-- Feature-sliced reducers
-- React Query for server state
+Each feature is self-contained with:
 
-### Routing
-- Protected routes for authenticated users
+- Components (UI components)
+- Hooks (custom React hooks)
+- Services (API calls and business logic)
+- Slices (Redux state management)
+- Types (TypeScript definitions)
+
+### Routing & Navigation
+
+- Protected routes with authentication
 - Layout-based routing system
-- Lazy loading support
+- Lazy loading with React.Suspense
+- Route-based code splitting
 
-## 🔧 Configuration
+## 🔧 Configuration Details
 
-### Vite
-- TypeScript support
-- Path aliases
-- Environment variables
+### Vite Configuration
 
-### Tailwind CSS
-- Custom configuration
-- Font setup
-- Utility-first CSS
+- TypeScript support with SWC
+- Path aliases mapping
+- Environment variables exposure
+- Asset optimization
 
-### Axios
-- Base configuration
-- Interceptors setup
-- Error handling
+## 🤝 Contributing Guidelines
 
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Tailwind CSS utility classes
-- Responsive layout components
-
-## 🤝 Contributing
-
-1. Follow the established project structure
-2. Use TypeScript for all new components
-3. Follow the existing code style with Biome
-4. Add tests for new features
-5. Update documentation as needed
+1. Follow the feature-based architecture
+2. Use TypeScript for all new code
+3. Follow Biome formatting rules
+4. Write meaningful commit messages
+5. Add proper TypeScript types
+6. Update documentation when needed
+7. Use meaningful component and file names
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🆕 What's Next?
-
-- Add testing setup (Jest + React Testing Library)
-- Implement Storybook for component documentation
-- Add CI/CD pipeline configuration
-- Include PWA capabilities
-- Add internationalization (i18n)
+MIT License - see LICENSE file for details.
 
 ---
 
