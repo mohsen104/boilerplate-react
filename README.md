@@ -216,10 +216,6 @@ Each feature is self-contained with:
 6. Update documentation when needed
 7. Use meaningful component and file names
 
-## 📄 License
-
-MIT License - see LICENSE file for details.
-
 ---
 
 **Built with ❤️ using modern web technologies**
